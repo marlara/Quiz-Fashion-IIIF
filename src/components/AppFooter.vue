@@ -14,14 +14,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-footer{
-    flex-shrink: 0;
-    display: flex;
-    background-color: black;
-    color: white;
-    padding-top: 5px;
-}
-
-</style>

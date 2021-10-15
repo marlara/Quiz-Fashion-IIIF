@@ -1,17 +1,6 @@
 <template>
   <header>
-    <p>My Vue.js Application</p>
+    <h1>Torna alla mostra</h1>
+    <router-link to="/">Home</router-link> 
   </header>
 </template>
-
-<style lang="css">
-  header {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    padding: .5rem 1rem;
-  }
-
-  nav {
-    margin-left: auto;
-  }
-</style>
