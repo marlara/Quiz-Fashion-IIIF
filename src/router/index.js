@@ -7,6 +7,11 @@ const routes = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/quiz_:id",
+    name: "quiz.show",
+    component: ()=> import("/views/QuizShow.vue")
+  }
 
 ];
 

@@ -1,0 +1,36 @@
+{
+    "quizzes": [
+      {
+        "name": "Quiz Albini",
+        "slug": "quiz-1",
+        "image": "D000533S_AlbiniW_ST40.jpg",
+        "id": 1,
+        "description":
+          "Primo quiz"
+      },
+      {
+        "name": "Quiz Versace",
+        "slug": "quiz-2",
+        "image": "D027514S_Versace.jpg",
+        "id": 2,
+        "description":
+          "Secondo quiz"
+      },
+      {
+        "name": "Quiz Armani",
+        "slug": "quiz-3",
+        "image": "D040524S_ARMANI.jpg",
+        "id": 3,
+        "description":
+          "Terzo quiz"
+      },
+      {
+        "name": "Quiz Moschino",
+        "slug": "quiz-4",
+        "image": "D040730S_Moschino.jpg",
+        "id": 4,
+        "description":
+          "Quarto quiz"
+      }
+   ]
+}

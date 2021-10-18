@@ -62,3 +62,31 @@ footer{
     background-color: #efe6dd;
     float: right;
 }
+
+a {
+    text-decoration: none;
+  }
+
+#nav {
+position: relative;
+top: 0;
+left: 0;
+right: 0;
+margin-top: 0;
+padding: 30px;
+display: flex;
+align-items: center;
+z-index: 2;
+}
+
+a {
+display: inline-block;
+margin-right: 20px;
+color: #fa648f;
+transition: 0.2 ease color;
+}
+
+a.router-link-active,
+a:hover {
+color: #F3DFA2;
+}
