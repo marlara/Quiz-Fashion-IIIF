@@ -5,10 +5,11 @@
       <router-link 
       v-for="quiz in quizzes"
       :key="quiz.id"
-      :to="{name: 'quiz.show', params:{id: quiz.id}}"
+      :to="{name: 'quiz.show', params:{id: quiz.id}}" 
     >
+    <!-- insert slug in params, see this lesson https://vueschool.io/lessons/named-routes -->
     {{quiz.name}}
-    </router-link>
+    </router-link> 
     </div>
   </header>
 </template>
