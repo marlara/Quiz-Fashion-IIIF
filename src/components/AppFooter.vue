@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p>Copyright &copy; {{ year }} </p>
+    <p>CC-BY — Lara Marziali — {{ year }} </p>
   </footer>
 </template>
 

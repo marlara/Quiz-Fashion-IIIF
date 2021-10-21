@@ -6,7 +6,33 @@
         "image": "D000533S_AlbiniW_ST40.jpg",
         "id": 1,
         "description":
-          "Primo quiz"
+          "Primo quiz",
+        "questions": [
+            {
+              "text": "Question 1",
+              "responses": [
+                {"res_text": "Risposta sbagliata Albini",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta sbagliata Albini",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "a"
+            }, 
+            {
+              "text": "Question 2",
+              "responses": [
+                {"res_text": "Risposta giusta Albini 2",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta sbagliata Albini 2",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "b"
+          }
+        ]
       },
       {
         "name": "Quiz Versace",
@@ -14,7 +40,33 @@
         "image": "D027514S_Versace.jpg",
         "id": 2,
         "description":
-          "Secondo quiz"
+          "Secondo quiz",
+          "questions": [
+            {
+              "text": "Question 1",
+              "responses": [
+                {"res_text": "Risposta sbagliata Versace",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta giusta Versace",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "b"
+            }, 
+            {
+              "text": "Question 2",
+              "responses": [
+                {"res_text": "Risposta sbagliata Versace 2",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta giusta Versace 2",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "a"
+          }
+        ]
       },
       {
         "name": "Quiz Armani",
@@ -22,7 +74,33 @@
         "image": "D040524S_ARMANI.jpg",
         "id": 3,
         "description":
-          "Terzo quiz"
+          "Terzo quiz",
+          "questions": [
+            {
+              "text": "Question 1",
+              "responses": [
+                {"res_text": "Risposta sbagliata Armani",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta giusta Armani",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "b"
+            }, 
+            {
+              "text": "Question 2",
+              "responses": [
+                {"res_text": "Risposta sbagliata Armani 2",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta giusta Armani 2",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "b"
+          }
+        ]
       },
       {
         "name": "Quiz Moschino",
@@ -30,7 +108,33 @@
         "image": "D040730S_Moschino.jpg",
         "id": 4,
         "description":
-          "Quarto quiz"
+          "Quarto quiz",
+          "questions": [
+            {
+              "text": "Question 1",
+              "responses": [
+                {"res_text": "Risposta sbagliata Moschino",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta giusta Moschino",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "b"
+            }, 
+            {
+              "text": "Question 2",
+              "responses": [
+                {"res_text": "Risposta sbagliata Moschino 2",
+                  "res_value": "a"
+                }, 
+                {"res_text": "Risposta sbagliata Moschino 2",
+                  "res_value": "b"
+                }
+              ],
+              "solution": "b"
+          }
+        ]
       }
    ]
 }

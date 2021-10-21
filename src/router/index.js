@@ -9,7 +9,7 @@ const routes = [
     component: Home,
   },
   {
-    path: "/quiz_:id",
+    path: "/quiz/:id",
     name: "quiz.show",
     component: ()=> import("/views/QuizShow.vue"),
     props: true,
