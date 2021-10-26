@@ -1,4 +1,4 @@
 <template>
-    <span class="go-back" @click="$router.back()">indietro
-    </span>
+    <button class="go-back" @click="$router.back()">indietro
+    </button>
 </template>

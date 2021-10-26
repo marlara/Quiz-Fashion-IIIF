@@ -115,4 +115,26 @@ button:hover, button:focus, button:focus-visible{
   cursor: pointer;
   padding-left: 10px; 
   display: block;
+  background-color: white;
+  border: none;
+}
+
+.go-back:hover, .go-back:focus, .go-back:focus-visible{
+  background-color: white;
+  border: 3px solid black;
+}
+
+
+.quizForm{
+  display: flex;
+}
+
+.quizQuestContainer{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.quizImage{
+  flex: 2;
 }
