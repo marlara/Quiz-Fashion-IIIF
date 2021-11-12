@@ -44,8 +44,14 @@
         </div>
 
         <div class="quizImage">
-           <img :src="imageCrop(quiz.iiif)">
-           <!--{{ imageCrop(quiz.iiif) }}-->
+            <div class="ImageArea">
+                <img :src="src">
+                <br/>
+                {{ src }} this is width {{ width }} and this is height {{ height }}
+                <br />
+
+            </div>
+
         </div>
     </div>
 </template>
@@ -63,14 +69,25 @@ export default {
     },
     data(){
         return {
-            questionIndex: 0
+            questionIndex: 0,
+            src: "",
+            width: 0,
+            height: 0
         }
     },
+
     computed:{
         quiz(){
             return sourceData.quizzes.find(quiz =>quiz.id === parseInt(this.id))
             },
         },
+    updated() {
+        this.imageCrop();
+    },
+    created() {
+        this.questionIndex = parseInt(this.id);
+        this.imageCrop();
+    },
     methods: {
     // Go to next question
     next: function() {
@@ -81,16 +98,20 @@ export default {
       this.questionIndex--;
     },
 
-    imageCrop: function(iiif) { 
+    imageCrop: function() { 
+        //let imageParts = [];
+        const iiif = this.quiz.iiif;
         let image = new Image(); //create an HTMLImageElement, see https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
-        image.src = iiif; //set the source of image as the iiif
-        let width =  Math.floor(image.width/3); //get width and height and divide them
-        let height = Math.floor(image.height/2);
-        //return "this is width " + width + " and this is height " + height
-        
-        let cropped = iiif.replace("full", "0,0," + width + "," + height);
-        return cropped
-    }
+        image.onload = (event) => {
+          this.width = event.target.width;
+          this.height = event.target.height;
+          this.src = event.target.src;
+        }
+        image.src = iiif; 
+      }
+
   }
 }
 </script>
+
+
