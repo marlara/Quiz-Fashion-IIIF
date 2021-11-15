@@ -42,52 +42,37 @@
                 <h2> Quiz finished</h2>
             </div>
         </div>
-
-        <div class="quizImage">
-            <div class="ImageArea">
-                <img :src="src">
-                <br/>
-                {{ src }} this is width {{ width }} and this is height {{ height }}
-                <br />
-
-            </div>
-
-        </div>
+        <ImageCrop 
+            :quiz-id="this.id" 
+            :iiif ="this.quiz.iiif"
+        />
     </div>
 </template>
 
 <script>
 import sourceData from '@/data.json'
-import GoBackButton from '@/components/GoBackButton.vue'
+import GoBackButton from '@/components/TheGoBackButton.vue'
+import ImageCrop from '@/components/TheImageCrop.vue'
 
 export default {
     components: {
         GoBackButton,
+        ImageCrop
         },
     props:{
         id: {type: String, required: true}
     },
     data(){
         return {
-            questionIndex: 0,
-            src: "",
-            width: 0,
-            height: 0
+            questionIndex: 0
         }
     },
-
     computed:{
         quiz(){
             return sourceData.quizzes.find(quiz =>quiz.id === parseInt(this.id))
             },
         },
-    updated() {
-        this.imageCrop();
-    },
-    created() {
-        this.questionIndex = parseInt(this.id);
-        this.imageCrop();
-    },
+
     methods: {
     // Go to next question
     next: function() {
@@ -96,19 +81,7 @@ export default {
     // Go to previous question
     prev: function() {
       this.questionIndex--;
-    },
-
-    imageCrop: function() { 
-        //let imageParts = [];
-        const iiif = this.quiz.iiif;
-        let image = new Image(); //create an HTMLImageElement, see https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
-        image.onload = (event) => {
-          this.width = event.target.width;
-          this.height = event.target.height;
-          this.src = event.target.src;
-        }
-        image.src = iiif; 
-      }
+    }
 
   }
 }
