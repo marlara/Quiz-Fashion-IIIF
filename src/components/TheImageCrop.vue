@@ -9,7 +9,8 @@
                 <br />
                 {{imageParts}}
                 <br />
-                <img :src="imageParts">
+                <img v-for="(imagePart, index) in imageParts" :key=index
+                    :src="imagePart">
             </div>
 
         </div>
@@ -29,7 +30,7 @@ export default {
             src: "",
             width: 0,
             height: 0,
-            imageParts: null,
+            imageParts: [],
             window: {
                 width: 0,
                 height: 0
@@ -44,35 +45,44 @@ export default {
         },
         updated() {
             this.imageCreate();
-            this.imagePartsCreate();
-
         },
         created() {
-            this.getManifest();
             this.imageCreate();
             window.addEventListener('resize', this.handleResize);
             this.handleResize();
         },
+
+        mounted(){
+            this.imagePartsCreate();
+        },
+
         unmounted() {
             window.removeEventListener('resize', this.handleResize);
         },
 
         methods: {
-        imageCreate: function() { 
+        imageCreate: function() {
+            //just loads the  
             const iiif = this.iiif.replace("full/full", "full/,550");
             let image = new Image(); //create an HTMLImageElement, see https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
             image.onload = (event) => {
-            //this.width = event.target.width;
-            //this.height = event.target.height;
-            this.src = event.target.src;
+                this.src = event.target.src;
             }
             image.src = iiif; 
         },
+
+         handleResize() { 
+            //gets the window size
+            this.window.width = window.innerWidth;
+            this.window.height = window.innerHeight;
+        },
         
-        getManifest: function() {
+        async getManifest() {
+            //the async wait is important here and in the imagePartsCreate because it waits for the data to be fetched
+            //gets the manifest and the native width and height from it
             var axios = require('axios').default; //use the default, see https://github.com/axios/axios/issues/3012
 
-            axios.get(this.iiif.replace("f1/full/full/0/native.jpg", "manifest.json"))
+            await axios.get(this.iiif.replace("f1/full/full/0/native.jpg", "manifest.json"))
             .then(response => (
                 this.canvas = response.data.sequences[0].canvases[0].images[0].resource,
                 this.width = this.canvas.width,
@@ -81,15 +91,15 @@ export default {
             .catch(error => 
                 console.log(error)
                 );
+                return [this.width, this.height]
         },
+        
+        async imagePartsCreate(){
+            [this.width, this.height] = await this.getManifest();
 
-         handleResize() {
-            this.window.width = window.innerWidth;
-            this.window.height = window.innerHeight;
-        },
-
-        imagePartsCreate: function(){
             var gridSize = 3;
+
+            //sets the maximum width and height, based on the window size
             var maxWidth = this.window.width / 2;
             var maxHeight = this.window.height - 100;
             if ( (this.height / this.width) > (maxHeight / maxWidth) ) {
@@ -98,14 +108,18 @@ export default {
                 this.scalePct = Math.min(maxWidth / this.width, 1);
             }
             
+            //composes the region
             var regionWidth = Math.floor(this.width / gridSize);
             var regionHeight = Math.floor(this.height / gridSize);
+            
+            //composes the size of the files
             var tileWidth = Math.ceil(this.width * this.scalePct / gridSize);
             var tileHeight = Math.ceil(this.height * this.scalePct / gridSize);
 
+            //sets the manifest with the new elements
             var xywh = [regionWidth, regionHeight].join(',');
             var size = tileWidth + "," + tileHeight;
-            this.imageParts = this.iiif.replace("full/full", "0,0,"+xywh + "/" + size);
+            this.imageParts.push(this.iiif.replace("full/full", "0,0,"+xywh + "/" + size));
 
         }
     }
