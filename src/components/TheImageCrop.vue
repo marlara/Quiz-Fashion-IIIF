@@ -1,22 +1,26 @@
 <template>
     <div class="quizImage">
-            <div class="ImageArea">
-                <img :src="src">
-                <br/>
-                {{ src }} this is width {{ width }} and this is height {{ height }}
-                <br />
-                window width: {{ window.width }}; window height: {{ window.height }}
-                <br />
-                {{imageParts}}
-                <br />
-                <img v-for="(imagePart, index) in imageParts" :key=index
-                    :src="imagePart">
+            <div class="ImageArea" >
+                <div :class="`row-${index+1}`" v-for="(seq, index) in sequence"  
+                :key=index
+                >
+                    <img v-for="(imagePart, index) in seq" :class="`imagePart-${index+1}`"
+                    :key="index" 
+                    :src="imagePart"
+                    >
+                </div>
             </div>
-
+            <br/>
+            <br/>
+            this is width {{ width }} and this is height {{ height }}
+            <br />
+            window width: {{ window.width }}; window height: {{ window.height }}
+            <br />
         </div>
 </template>
 
 <script>
+import _ from 'lodash';
 
 export default {
     name: 'ImageCrop',
@@ -30,7 +34,7 @@ export default {
             src: "",
             width: 0,
             height: 0,
-            imageParts: [],
+            sequence: [],
             window: {
                 width: 0,
                 height: 0
@@ -43,15 +47,10 @@ export default {
             return this.quizId;
             },
         },
-        updated() {
-            this.imageCreate();
-        },
         created() {
-            this.imageCreate();
             window.addEventListener('resize', this.handleResize);
             this.handleResize();
         },
-
         mounted(){
             this.imagePartsCreate();
         },
@@ -70,16 +69,6 @@ export default {
         },
 
         methods: {
-        imageCreate: function() {
-            //just loads the  
-            const iiif = this.iiif.replace("full/full", "full/,550");
-            let image = new Image(); //create an HTMLImageElement, see https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
-            image.onload = (event) => {
-                this.src = event.target.src;
-            }
-            image.src = iiif; 
-        },
-
          handleResize() { 
             //gets the window size
             this.window.width = window.innerWidth;
@@ -105,8 +94,8 @@ export default {
         
         async imagePartsCreate(){
             [this.width, this.height] = await this.getManifest();
-
             var gridSize = 3;
+            var imageParts = [];
             
             //sets the maximum width and height, based on the window size
             var maxWidth = this.window.width / 2;
@@ -130,9 +119,11 @@ export default {
                     //sets the manifest with the composed elements
                     var xywh = [col * regionWidth, row * regionHeight, regionWidth, regionHeight].join(',');
                     var size = tileWidth + "," + tileHeight;
-                    this.imageParts.push(this.iiif.replace("full/full", xywh + "/" + size));
+                    imageParts.push(this.iiif.replace("full/full", xywh + "/" + size));
                 }
             }
+            this.sequence = _.chunk(imageParts, gridSize)
+
         }
     }
 }

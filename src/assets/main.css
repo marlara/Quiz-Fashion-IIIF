@@ -137,4 +137,6 @@ button:hover, button:focus, button:focus-visible{
 
 .quizImage{
   flex: 2;
+  display: flex;
+  flex-wrap: wrap;
 }
