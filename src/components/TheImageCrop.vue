@@ -59,6 +59,15 @@ export default {
         unmounted() {
             window.removeEventListener('resize', this.handleResize);
         },
+        watch: { //changes the imageParts if the iiif prop changes
+            iiif: {
+                handler(){
+                    this.imageParts = [];
+                    this.imagePartsCreate();
+                },
+                immediate: false, //if true gets doubled on refresh
+            }
+        },
 
         methods: {
         imageCreate: function() {
@@ -98,7 +107,7 @@ export default {
             [this.width, this.height] = await this.getManifest();
 
             var gridSize = 3;
-
+            
             //sets the maximum width and height, based on the window size
             var maxWidth = this.window.width / 2;
             var maxHeight = this.window.height - 100;
@@ -107,7 +116,7 @@ export default {
             } else {
                 this.scalePct = Math.min(maxWidth / this.width, 1);
             }
-            
+
             //composes the region
             var regionWidth = Math.floor(this.width / gridSize);
             var regionHeight = Math.floor(this.height / gridSize);
@@ -116,11 +125,14 @@ export default {
             var tileWidth = Math.ceil(this.width * this.scalePct / gridSize);
             var tileHeight = Math.ceil(this.height * this.scalePct / gridSize);
 
-            //sets the manifest with the new elements
-            var xywh = [regionWidth, regionHeight].join(',');
-            var size = tileWidth + "," + tileHeight;
-            this.imageParts.push(this.iiif.replace("full/full", "0,0,"+xywh + "/" + size));
-
+            for (let row = 0; row < gridSize; row++){
+                for (let col = 0; col < gridSize; col++){
+                    //sets the manifest with the composed elements
+                    var xywh = [col * regionWidth, row * regionHeight, regionWidth, regionHeight].join(',');
+                    var size = tileWidth + "," + tileHeight;
+                    this.imageParts.push(this.iiif.replace("full/full", xywh + "/" + size));
+                }
+            }
         }
     }
 }
