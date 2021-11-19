@@ -1,12 +1,12 @@
 <template>
     <div class="quizImage">
             <div class="ImageArea" >
-                <div :class="`row-${index+1}`" v-for="(seq, index) in sequence"  
-                :key=index
+                <div :class="`row-${index+1}`" v-for="(imagePart, index) in this.sequence"  
+                :key="index"
                 >
-                    <img v-for="(imagePart, index) in seq" :class="`imagePart-${index+1}`"
-                    :key="index" 
-                    :src="imagePart"
+                    <img v-for="(value, key) in imagePart" :class="`imagePart-${key}`"
+                    :key="key" 
+                    :src="value"
                     >
                 </div>
             </div>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import _ from 'lodash';
 
 export default {
     name: 'ImageCrop',
@@ -61,7 +60,7 @@ export default {
         watch: { //changes the imageParts if the iiif prop changes
             iiif: {
                 handler(){
-                    this.imageParts = [];
+                    this.squence = [];
                     this.imagePartsCreate();
                 },
                 immediate: false, //if true gets doubled on refresh
@@ -95,7 +94,8 @@ export default {
         async imagePartsCreate(){
             [this.width, this.height] = await this.getManifest();
             var gridSize = 3;
-            var imageParts = [];
+            var imageParts = {};
+
             
             //sets the maximum width and height, based on the window size
             var maxWidth = this.window.width / 2;
@@ -114,16 +114,20 @@ export default {
             var tileWidth = Math.ceil(this.width * this.scalePct / gridSize);
             var tileHeight = Math.ceil(this.height * this.scalePct / gridSize);
 
+            var seq = 0;
             for (let row = 0; row < gridSize; row++){
                 for (let col = 0; col < gridSize; col++){
                     //sets the manifest with the composed elements
                     var xywh = [col * regionWidth, row * regionHeight, regionWidth, regionHeight].join(',');
                     var size = tileWidth + "," + tileHeight;
-                    imageParts.push(this.iiif.replace("full/full", xywh + "/" + size));
+                    imageParts[seq] = this.iiif.replace("full/full", xywh + "/" + size);
+                    seq++;
+                    if (seq % gridSize === 0) { //create the sequence array
+                        this.sequence.push(imageParts);
+                        imageParts = {};
+                    }
                 }
             }
-            this.sequence = _.chunk(imageParts, gridSize)
-
         }
     }
 }
