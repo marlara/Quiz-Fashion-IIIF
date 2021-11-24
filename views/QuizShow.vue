@@ -13,17 +13,18 @@
                 <div v-if="index === questionIndex">
                     <h2>{{ question.text }}</h2>
                     <ol>
+                        <!-- The radio button has three new directives -->
+                            <!-- v-bind:value sets "value" to "true" if the response is correct -->
+                            <!-- v-bind:name sets "name" to question index to group answers by question. The radio group must have share the same name (the value of the name attribute) to be treated as a group. Once the radio group is created, selecting any radio button in that group automatically deselects any other selected radio button in the same group. You can have as many radio groups on a page as you want, as long as each group has its own name. -->
+                            <!-- v-model creates binding with userResponses -->
                         <li v-for="(response, index) in question.responses"
                             :key = index
                         >
                         <label>
-                            <!-- The radio button has three new directives -->
-                            <!-- v-bind:value sets "value" to "true" if the response is correct -->
-                            <!-- v-bind:name sets "name" to question index to group answers by question -->
-                            <!-- v-model creates binding with userResponses -->
-                            <input type="radio" 
-                                :value="[response.res_value === question.solution]"
-                                :name="index" 
+                            <input type="radio"
+                                :value="[response.res_value === true]"
+                                :name="response.res_number" 
+                                v-model="userResponse"
                             > {{response.res_text}}
                         </label>
                         </li>
@@ -36,6 +37,8 @@
                     <button v-on:click="next">
                         next
                     </button>
+                     {{userResponse}}
+                     {{correctAnswers}}
                 </div>
             </div>
             <div v-if="questionIndex === quiz.questions.length">
@@ -45,6 +48,7 @@
         <ImageCrop 
             :quiz-id="this.id" 
             :iiif ="this.quiz.iiif"
+            :correct-answers="this.correctAnswers"
         />
     </div>
 </template>
@@ -64,7 +68,9 @@ export default {
     },
     data(){
         return {
-            questionIndex: 0
+            questionIndex: 0,
+            userResponse: null,
+            correctAnswers: []
         }
     },
     computed:{
@@ -76,11 +82,15 @@ export default {
     methods: {
     // Go to next question
     next: function() {
-      this.questionIndex++;
+        if (this.userResponse[0] == true) {
+            this.correctAnswers.push(this.questionIndex)
+        }
+        this.questionIndex++;
     },
     // Go to previous question
     prev: function() {
       this.questionIndex--;
+      this.correctAnswers.pop()
     }
 
   }

@@ -12,26 +12,119 @@
             {
               "text": "Question 1",
               "responses": [
-                {"res_text": "Risposta sbagliata Albini",
-                  "res_value": "a"
+                {"res_text": "Risposta corretta Albini",
+                  "res_number": 0,
+                  "res_value": true
                 }, 
                 {"res_text": "Risposta sbagliata Albini",
-                  "res_value": "b"
+                  "res_number": 0,
+                  "res_value": false
                 }
-              ],
-              "solution": "a"
+              ]
             }, 
             {
               "text": "Question 2",
               "responses": [
                 {"res_text": "Risposta giusta Albini 2",
-                  "res_value": "a"
+                  "res_number": 1,
+                  "res_value": true
                 }, 
                 {"res_text": "Risposta sbagliata Albini 2",
-                  "res_value": "b"
+                  "res_number": 1,
+                  "res_value": false
                 }
-              ],
-              "solution": "b"
+              ]
+          },
+          {
+            "text": "Question 3",
+            "responses": [
+              {"res_text": "Risposta corretta Albini",
+                "res_number": 2,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Albini",
+                "res_number": 2,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 4",
+            "responses": [
+              {"res_text": "Risposta corretta Albini",
+                "res_number": 3,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Albini",
+                "res_number": 3,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 5",
+            "responses": [
+              {"res_text": "Risposta corretta Albini",
+                "res_number": 4,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Albini",
+                "res_number": 4,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 6",
+            "responses": [
+              {"res_text": "Risposta corretta Albini",
+                "res_number": 5,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Albini",
+                "res_number": 5,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 7",
+            "responses": [
+              {"res_text": "Risposta corretta Albini",
+                "res_number": 6,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Albini",
+                "res_number": 6,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 8",
+            "responses": [
+              {"res_text": "Risposta corretta Albini",
+                "res_number": 7,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Albini",
+                "res_number": 7,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 9",
+            "responses": [
+              {"res_text": "Risposta corretta Albini",
+                "res_number": 8,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Albini",
+                "res_number": 8,
+                "res_value": false
+              }
+            ]
           }
         ]
       },
@@ -48,25 +141,118 @@
               "text": "Question 1",
               "responses": [
                 {"res_text": "Risposta sbagliata Versace",
-                  "res_value": "a"
+                  "res_number": 0,
+                  "res_value": false
                 }, 
                 {"res_text": "Risposta giusta Versace",
-                  "res_value": "b"
+                  "res_number": 0,
+                  "res_value": true
                 }
-              ],
-              "solution": "b"
+              ]
             }, 
             {
               "text": "Question 2",
               "responses": [
                 {"res_text": "Risposta sbagliata Versace 2",
-                  "res_value": "a"
+                  "res_number": 1,
+                  "res_value": false
                 }, 
                 {"res_text": "Risposta giusta Versace 2",
-                  "res_value": "b"
+                  "res_number": 1,
+                  "res_value": true
                 }
-              ],
-              "solution": "a"
+              ]
+          },
+          {
+            "text": "Question 3",
+            "responses": [
+              {"res_text": "Risposta corretta Versace",
+                "res_number": 2,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Versace",
+                "res_number": 2,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 4",
+            "responses": [
+              {"res_text": "Risposta corretta Versace",
+                "res_number": 3,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Versace",
+                "res_number": 3,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 5",
+            "responses": [
+              {"res_text": "Risposta corretta Versace",
+                "res_number": 4,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Versace",
+                "res_number": 4,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 6",
+            "responses": [
+              {"res_text": "Risposta corretta Versace",
+                "res_number": 5,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Versace",
+                "res_number": 5,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 7",
+            "responses": [
+              {"res_text": "Risposta corretta Versace",
+                "res_number": 6,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Versace",
+                "res_number": 6,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 8",
+            "responses": [
+              {"res_text": "Risposta corretta Versace",
+                "res_number": 7,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Versace",
+                "res_number": 7,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 9",
+            "responses": [
+              {"res_text": "Risposta corretta Versace",
+                "res_number": 8,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Versace",
+                "res_number": 8,
+                "res_value": false
+              }
+            ]
           }
         ]
       },
@@ -83,25 +269,118 @@
               "text": "Question 1",
               "responses": [
                 {"res_text": "Risposta sbagliata Armani",
-                  "res_value": "a"
+                  "res_number": 0,
+                  "res_value": false
                 }, 
                 {"res_text": "Risposta giusta Armani",
-                  "res_value": "b"
+                  "res_number": 0,
+                  "res_value": true
                 }
-              ],
-              "solution": "b"
+              ]
             }, 
             {
               "text": "Question 2",
               "responses": [
                 {"res_text": "Risposta sbagliata Armani 2",
-                  "res_value": "a"
+                  "res_number": 1,
+                  "res_value": false
                 }, 
                 {"res_text": "Risposta giusta Armani 2",
-                  "res_value": "b"
+                  "res_number": 1,
+                  "res_value": true
                 }
-              ],
-              "solution": "b"
+              ]
+          },
+          {
+            "text": "Question 3",
+            "responses": [
+              {"res_text": "Risposta corretta Armani",
+                "res_number": 2,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Armani",
+                "res_number": 2,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 4",
+            "responses": [
+              {"res_text": "Risposta corretta Armani",
+                "res_number": 3,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Armani",
+                "res_number": 3,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 5",
+            "responses": [
+              {"res_text": "Risposta corretta Armani",
+                "res_number": 4,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Armani",
+                "res_number": 4,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 6",
+            "responses": [
+              {"res_text": "Risposta corretta Armani",
+                "res_number": 5,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Armani",
+                "res_number": 5,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 7",
+            "responses": [
+              {"res_text": "Risposta corretta Armani",
+                "res_number": 6,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Armani",
+                "res_number": 6,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 8",
+            "responses": [
+              {"res_text": "Risposta corretta Armani",
+                "res_number": 7,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Armani",
+                "res_number": 7,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 9",
+            "responses": [
+              {"res_text": "Risposta corretta Armani",
+                "res_number": 8,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Armani",
+                "res_number": 8,
+                "res_value": false
+              }
+            ]
           }
         ]
       },
@@ -118,25 +397,118 @@
               "text": "Question 1",
               "responses": [
                 {"res_text": "Risposta sbagliata Moschino",
-                  "res_value": "a"
+                  "res_number": 0,
+                  "res_value": false
                 }, 
                 {"res_text": "Risposta giusta Moschino",
-                  "res_value": "b"
+                  "res_number": 0,
+                  "res_value": true
                 }
-              ],
-              "solution": "b"
+              ]
             }, 
             {
               "text": "Question 2",
               "responses": [
                 {"res_text": "Risposta sbagliata Moschino 2",
-                  "res_value": "a"
+                  "res_number": 1,
+                  "res_value": false
                 }, 
-                {"res_text": "Risposta sbagliata Moschino 2",
-                  "res_value": "b"
+                {"res_text": "Risposta corretta Moschino 2",
+                  "res_number": 1,
+                  "res_value": true
                 }
-              ],
-              "solution": "b"
+              ]
+          },
+          {
+            "text": "Question 3",
+            "responses": [
+              {"res_text": "Risposta corretta Moschino",
+                "res_number": 2,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Moschino",
+                "res_number": 2,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 4",
+            "responses": [
+              {"res_text": "Risposta corretta Moschino",
+                "res_number": 3,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Moschino",
+                "res_number": 3,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 5",
+            "responses": [
+              {"res_text": "Risposta corretta Moschino",
+                "res_number": 4,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Moschino",
+                "res_number": 4,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 6",
+            "responses": [
+              {"res_text": "Risposta corretta Moschino",
+                "res_number": 5,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Moschino",
+                "res_number": 5,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 7",
+            "responses": [
+              {"res_text": "Risposta corretta Moschino",
+                "res_number": 6,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Moschino",
+                "res_number": 6,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 8",
+            "responses": [
+              {"res_text": "Risposta corretta Moschino",
+                "res_number": 7,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Moschino",
+                "res_number": 7,
+                "res_value": false
+              }
+            ]
+          }, 
+          {
+            "text": "Question 9",
+            "responses": [
+              {"res_text": "Risposta corretta Moschino",
+                "res_number": 8,
+                "res_value": true
+              }, 
+              {"res_text": "Risposta sbagliata Moschino",
+                "res_number": 8,
+                "res_value": false
+              }
+            ]
           }
         ]
       }
