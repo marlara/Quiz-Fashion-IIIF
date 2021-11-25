@@ -40,7 +40,6 @@ export default {
                 width: 0,
                 height: 0
             },
-            isActive: true,
             answers: [0,3]
         }
     },
@@ -137,15 +136,13 @@ export default {
             },
 
              changeClass(imgKey){
-                for (let el of this.answers){
-                    if (imgKey == el){
+                for (let el of this.correctAnswers) {
+                    if (imgKey == el){ //with === doesn't work
                         return "active"
                     }
-                    else{
-                        return "not active"
-                    }
-            }
-        },
+                }
+             }
+        
 
     }
 }
