@@ -66,23 +66,26 @@ export default {
     props:{
         id: {type: String, required: true}
     },
+
     data(){
         return {
             questionIndex: 0,
-            userResponse: null,
-            correctAnswers: []
+            userResponse: null, //this is the present radio selection
+            correctAnswers: [] //this is the array of selected answers
         }
     },
+
     computed:{
         quiz(){
             return sourceData.quizzes.find(quiz =>quiz.id === parseInt(this.id))
             },
         },
 
+
     methods: {
     // Go to next question
     next: function() {
-        if (this.userResponse[0] == true) {
+        if (this.userResponse[0] == true) { //if the selected answer is true then append to the array the index number
             this.correctAnswers.push(this.questionIndex)
         }
         this.questionIndex++;

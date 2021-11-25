@@ -39,10 +39,21 @@ export default {
             window: {
                 width: 0,
                 height: 0
-            },
-            answers: [0,3]
+            }
         }
     },
+    
+
+    //THIS IS NOT NEEDED WITH THE <router-view :key="$route.path"> IN APP MAIN (and is lighter)
+    /*watch: { //changes the imageParts if the iiif prop changes 
+        iiif: {
+            handler(){
+                this.sequence = [];
+                this.imagePartsCreate();
+            },
+            immediate: false, //if true gets doubled on refresh
+        },
+    },*/
 
     computed:{
         get(){
@@ -60,16 +71,6 @@ export default {
         unmounted() {
             window.removeEventListener('resize', this.handleResize);
         },
-        watch: { //changes the imageParts if the iiif prop changes
-            iiif: {
-                handler(){
-                    this.sequence = [];
-                    this.imagePartsCreate();
-                },
-                immediate: false, //if true gets doubled on refresh
-            },
-        },
-       
         
 
         methods: {
