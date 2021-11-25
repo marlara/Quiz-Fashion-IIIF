@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
 
+/* GENERAL */
+
 html, body{
     height: 100%;
     margin: 0;
@@ -47,7 +49,7 @@ footer{
 
 #content{
     flex: 1 0 auto;
-    padding: 12px 48px;
+    /*padding: 12px 48px;*/
 }
 
 .game{
@@ -111,29 +113,91 @@ button:hover, button:focus, button:focus-visible{
   background-color: #F3DFA2;
 }
 
+/* GO BACK COMPONENT */
+
 .go-back{
   cursor: pointer;
   padding-left: 10px; 
-  display: block;
+  display: flex;
   background-color: white;
   border: none;
+  align-items: center;
 }
 
 .go-back:hover, .go-back:focus, .go-back:focus-visible{
   background-color: white;
-  border: 3px solid black;
 }
 
+.go-back span{
+  position: relative;
+  display: inline-block;
+}
+
+.go-back span::after{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.1em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  transform: scaleX(0);
+  visibility: hidden;
+  transition: all 0.3 ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.go-back span:hover::after, .go-back span:focus::after{
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+.back_arrow{
+  height: 20px;
+  padding-right: 5px;
+}
+
+/* QUIZ SHOW VIEW*/
+
+.quizTitle{
+  background-color: #fa648f;
+  height: 80px;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+.quizTitle h1{
+  padding: 12px 48px;
+  margin: 0;
+}
+
+.quizDescription{
+  padding: 12px 48px;
+}
+
+.quizDescription p{
+  background-color: #F3DFA2;
+  padding: 0.5em;
+  max-width: max-content;
+}
 
 .quizForm{
   display: flex;
+  padding: 12px 48px;
 }
+
 
 .quizQuestContainer{
   display: flex;
   flex-direction: column;
   flex: 1;
 }
+
+/* IMAGECROP COMPONENT */
 
 .quizImage{
   flex: 2;

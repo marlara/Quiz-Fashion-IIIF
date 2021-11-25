@@ -7,7 +7,7 @@
         "iiif": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9042253v/f1/full/full/0/native.jpg", 
         "id": 1,
         "description":
-          "Primo quiz",
+          "Primo quiz: qualcosa su Albini",
         "questions": [
             {
               "text": "Question 1",

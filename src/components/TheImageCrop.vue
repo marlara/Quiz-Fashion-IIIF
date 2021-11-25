@@ -20,7 +20,6 @@
 </template>
 
 <script>
-//import { forEach } from 'lodash';
 
 export default {
     name: 'ImageCrop',

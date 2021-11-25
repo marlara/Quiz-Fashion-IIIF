@@ -1,6 +1,8 @@
 <template>
-    <div>
+    <div class="quizTitle">
         <h1>{{quiz.name}}</h1>
+    </div>
+    <div class="quizDescription">
         <GoBackButton />
         <p>{{quiz.description}}</p>
     </div>
