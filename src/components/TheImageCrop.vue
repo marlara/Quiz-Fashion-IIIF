@@ -60,14 +60,11 @@ export default {
             return this.quizId;
             },
         },
-        created() {
+        mounted(){
             window.addEventListener('resize', this.handleResize);
             this.handleResize();
-        },
-        mounted(){
             this.imagePartsCreate();
         },
-
         unmounted() {
             window.removeEventListener('resize', this.handleResize);
         },
@@ -105,7 +102,7 @@ export default {
                 
                 //sets the maximum width and height, based on the window size
                 var maxWidth = this.window.width / 2;
-                var maxHeight = this.window.height - 100;
+                var maxHeight = this.window.height - 200;
                 if ( (this.height / this.width) > (maxHeight / maxWidth) ) {
                     this.scalePct = Math.min(maxHeight / this.height, 1);
                 } else {

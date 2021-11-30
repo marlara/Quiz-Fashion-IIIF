@@ -10,7 +10,7 @@
           "Primo quiz: qualcosa su Albini",
         "questions": [
             {
-              "text": "Question 1",
+              "text": "Bla bla bla? 1",
               "responses": [
                 {"res_text": "Risposta corretta Albini",
                   "res_number": 0,

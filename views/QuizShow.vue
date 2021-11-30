@@ -7,14 +7,15 @@
         <!--<p>{{quiz.description}}</p> -->
         <p>Rispondi alle domande. Ad ogni risposta corretta si comporrà un pezzo dell'immagine. Se risponderai correttamente a tutto, avrai una figura intera!</p>
     </div>
-    <div class="quizForm">
+    <div class="quizForm" :key="componentKey"> <!--how to force re-render https://michaelnthiessen.com/force-re-render/-->
         <div class="quizQuestContainer">
-            <div class="quizQuestions" v-for="(question, index) in quiz.questions"
+            <div v-for="(question, index) in quiz.questions"
                 :key = index
             >
                 <!-- Hide all questions, show only the one with index === to current question index -->
-                <div v-if="index === questionIndex">
-                    <h2>{{ question.text }}</h2>
+                <div class="quizQuestion" v-if="index === questionIndex">
+                    <h2> Domanda {{ questionIndex+1 }}</h2>
+                    <p class="question"> {{ question.text }} </p>
                     <ol>
                         <!-- The radio button has three new directives -->
                             <!-- v-bind:value sets "value" to "true" if the response is correct -->
@@ -34,18 +35,22 @@
                     </ol>
                     <!-- The two navigation buttons -->
                     <!-- Note: prev is hidden on first question -->
-                    <button v-if="questionIndex > 0" v-on:click="prev">
+                    <button :disabled="questionIndex < 1" aria-label="go to previous" @click="prev">
                         prev
                     </button>
-                    <button v-on:click="next">
+                    <button :disabled="!userResponse" aria-label="go to next" @click="next">
                         next
                     </button>
                      {{userResponse}}
                      {{correctAnswers}}
                 </div>
             </div>
-            <div v-if="questionIndex === quiz.questions.length">
-                <h2> Quiz finished</h2>
+            <div class="quizQuestion" v-if="questionIndex === quiz.questions.length">
+                <h2>Hai finito il quiz!</h2>
+                <p>Le risposte corrette sono state: {{this.correctAnswers.length}} / {{ quiz.questions.length }} </p>
+                <button @click="restart"> 
+                    Voglio riprovare!
+                </button>
             </div>
         </div>
         <ImageCrop 
@@ -72,6 +77,7 @@ export default {
 
     data(){
         return {
+            componentKey: 0,
             questionIndex: 0,
             userResponse: null, //this is the present radio selection
             correctAnswers: [] //this is the array of selected answers
@@ -84,12 +90,15 @@ export default {
             },
         },
 
-
     methods: {
     // Go to next question
     next: function() {
         if (this.userResponse[0] == true) { //if the selected answer is true then append to the array the index number
             this.correctAnswers.push(this.questionIndex)
+            alert("Risposta corretta! :)");
+        }
+        else{
+            alert("Risposta errata :(")
         }
         this.questionIndex++;
     },
@@ -97,6 +106,13 @@ export default {
     prev: function() {
       this.questionIndex--;
       this.correctAnswers.pop()
+    },
+    //Restart quiz
+    restart:function(){
+        this.componentKey += 1;
+        this.questionIndex = 0,
+        this.userResponse = null, //this is the present radio selection
+        this.correctAnswers = [] //this is the array of selected answers
     }
 
   }

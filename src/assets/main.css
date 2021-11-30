@@ -37,6 +37,7 @@ header > h1 {
     padding-left: 20px;
   }
 
+
 footer{
     flex-shrink: 0;
     display: flex;
@@ -98,6 +99,7 @@ color: #F3DFA2;
 }
 
 button{
+  margin: 2px;
   background-color: #fa648f;
   padding: 0 12px;
   border: 3px solid #000;
@@ -111,6 +113,10 @@ button{
 
 button:hover, button:focus, button:focus-visible{
   background-color: #F3DFA2;
+}
+
+button:disabled{
+  background-color: #efe6dd;
 }
 
 /* GO BACK COMPONENT */
@@ -181,7 +187,7 @@ button:hover, button:focus, button:focus-visible{
 }
 
 .quizDescription p{
-  background-color: #F3DFA2;
+  background-color: #efe6dd;
   padding: 0.5em;
   max-width: max-content;
 }
@@ -204,14 +210,27 @@ button:hover, button:focus, button:focus-visible{
   flex: 2;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 [class^="imagePart"]{
   visibility: hidden;
+  border: 3px solid #efe6dd;
 }
 
 .active{
   visibility: visible;
+}
+
+.question{
+  font-size: 20px;
+}
+
+.quizQuestion{
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: 3px solid #efe6dd;
+  border-radius: 15px;
 }
 
 
