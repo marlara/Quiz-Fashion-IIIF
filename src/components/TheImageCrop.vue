@@ -10,12 +10,13 @@
                     > 
                 </div>
             </div>
+            <!--
             <br/>
             <br/>
             this is width {{ width }} and this is height {{ height }}
             <br />
             window width: {{ window.width }}; window height: {{ window.height }}
-            <br />
+            <br />-->
         </div>
 </template>
 

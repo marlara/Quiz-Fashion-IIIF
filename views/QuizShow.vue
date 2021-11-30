@@ -4,7 +4,8 @@
     </div>
     <div class="quizDescription">
         <GoBackButton />
-        <p>{{quiz.description}}</p>
+        <!--<p>{{quiz.description}}</p> -->
+        <p>Rispondi alle domande. Ad ogni risposta corretta si comporrà un pezzo dell'immagine. Se risponderai correttamente a tutto, avrai una figura intera!</p>
     </div>
     <div class="quizForm">
         <div class="quizQuestContainer">
