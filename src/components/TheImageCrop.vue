@@ -80,7 +80,7 @@ export default {
             async getManifest() {
                 //the async wait is important here and in the imagePartsCreate because it waits for the data to be fetched
                 //gets the manifest and the native width and height from it
-                var axios = require('axios').default; //use the default, see https://github.com/axios/axios/issues/3012
+                const axios = require('axios').default; //use the default, see https://github.com/axios/axios/issues/3012
 
                 await axios.get(this.iiif.replace("f1/full/full/0/native.jpg", "manifest.json"))
                 .then(response => (
@@ -96,13 +96,13 @@ export default {
         
             async imagePartsCreate(){
                 [this.width, this.height] = await this.getManifest();
-                var gridSize = 3;
-                var imageParts = {};
+                const gridSize = 3;
+                let imageParts = {};
 
                 
                 //sets the maximum width and height, based on the window size
-                var maxWidth = this.window.width / 2;
-                var maxHeight = this.window.height - 200;
+                let maxWidth = this.window.width / 2;
+                let maxHeight = this.window.height - 200;
                 if ( (this.height / this.width) > (maxHeight / maxWidth) ) {
                     this.scalePct = Math.min(maxHeight / this.height, 1);
                 } else {
@@ -110,19 +110,19 @@ export default {
                 }
 
                 //composes the region
-                var regionWidth = Math.floor(this.width / gridSize);
-                var regionHeight = Math.floor(this.height / gridSize);
+                let regionWidth = Math.floor(this.width / gridSize);
+                let regionHeight = Math.floor(this.height / gridSize);
                 
                 //composes the size of the files
-                var tileWidth = Math.ceil(this.width * this.scalePct / gridSize);
-                var tileHeight = Math.ceil(this.height * this.scalePct / gridSize);
+                let tileWidth = Math.ceil(this.width * this.scalePct / gridSize);
+                let tileHeight = Math.ceil(this.height * this.scalePct / gridSize);
 
-                var seq = 0;
+                let seq = 0;
                 for (let row = 0; row < gridSize; row++){
                     for (let col = 0; col < gridSize; col++){
                         //sets the manifest with the composed elements
-                        var xywh = [col * regionWidth, row * regionHeight, regionWidth, regionHeight].join(',');
-                        var size = tileWidth + "," + tileHeight;
+                        let xywh = [col * regionWidth, row * regionHeight, regionWidth, regionHeight].join(',');
+                        let size = tileWidth + "," + tileHeight;
                         imageParts[seq] = this.iiif.replace("full/full", xywh + "/" + size);
                         seq++;
                         if (seq % gridSize === 0) { //create the sequence array
