@@ -2,12 +2,12 @@
 
 /* GENERAL */
 
-html, body{
+html, body, main{
     height: 100%;
     margin: 0;
 }
 
-body{
+body, main{
     display: flex;
     flex-direction: column;
 }
@@ -23,19 +23,55 @@ body{
 
 header {
     display: flex;
-    border-bottom: 1px solid #ccc;
-    padding: .5rem 1rem;
     background-color: black;
+    padding: 12px 48px;
+    justify-content: space-between;
+    align-items: center;
   }
 
-nav {
-    margin-left: auto;
-  }
+.router{
+  box-sizing: border-box;
+}
 
-header > h1 {
-    color: #fa648f;
-    padding-left: 20px;
-  }
+.router > a{
+  padding: 0.5rem;
+  position: relative;
+}
+
+.router > a:hover{
+  color: #F3DFA2;
+}
+
+.router > a::after{
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.1em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #F3DFA2;
+  transform: scaleX(0);
+  visibility: hidden;
+  transition: all 0.3 ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.router > a:hover::after, .router > a:focus::after{
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+header > h1{
+  margin: 0 auto 0 0;
+  padding: 6px 0;
+  color: white;
+  font-size: 31.5px;
+  line-height: 48px;
+}
 
 
 footer{
@@ -48,9 +84,13 @@ footer{
 }
 
 
-#content{
+#content-quiz{
     flex: 1 0 auto;
-    /*padding: 12px 48px;*/
+}
+
+#content{
+  flex: 1 0 auto;
+  padding: 12px 48px;
 }
 
 .game{
@@ -71,26 +111,11 @@ footer{
 }
 
 a {
-    text-decoration: none;
-  }
-
-#nav {
-position: relative;
-top: 0;
-left: 0;
-right: 0;
-margin-top: 0;
-padding: 30px;
-display: flex;
-align-items: center;
-z-index: 2;
-}
-
-a {
 display: inline-block;
 margin-right: 20px;
 color: #fa648f;
 transition: 0.2 ease color;
+text-decoration: none;
 }
 
 a.router-link-active,
@@ -117,6 +142,68 @@ button:hover, button:focus, button:focus-visible{
 
 button:disabled{
   background-color: #efe6dd;
+}
+
+.rectangle_title{
+  display: block;
+  background: linear-gradient(to top left,transparent, #fa648f 0) top left/40% 40% no-repeat, transparent;
+  margin-left: 0px;
+}
+
+
+/* HOME */
+
+
+.home_image {
+  width: 400px;
+  padding: 0px 10px;
+  margin-right: 0px;
+  float: left;
+}
+
+@media only screen and (max-width: 1300px){
+  .home_image{
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .home_image{
+    width: 200px;
+  }
+}
+
+.homeDescription{
+  width: auto;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeDescription p{
+  padding: 0.5em;
+  padding-bottom: 2em;
+}
+
+.quizzes{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight-quiz{
+  background-color: #fa648f;
+  color: #000;
+  padding: 5px;
+  margin: 3px;
+  margin-left: 3px;
+  font-family: "Space Grotesk";
+  margin-left: 0px;
+  border: #F3DFA2 solid 3px;
+}
+
+.highlight-quiz:hover{
+  background-color: #F3DFA2;
 }
 
 /* GO BACK COMPONENT */
@@ -170,6 +257,13 @@ button:disabled{
 
 /* QUIZ SHOW VIEW*/
 
+.title_image {
+  width: 100px;
+  float: left;
+  margin-right: 0px;
+}
+
+/*
 .quizTitle{
   background-color: #fa648f;
   height: 80px;
@@ -184,7 +278,7 @@ button:disabled{
 
 .quizDescription{
   padding: 12px 48px;
-}
+}*/
 
 .quizDescription p{
   background-color: #efe6dd;
