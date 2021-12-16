@@ -2,14 +2,15 @@
 
 /* GENERAL */
 
-html, body, main{
+html, body{
     height: 100%;
     margin: 0;
 }
 
-body, main{
-    display: flex;
-    flex-direction: column;
+main{
+  height: 100%;
+  padding: 12px 48px;
+  overflow-y: scroll;
 }
 
 #app {
@@ -81,33 +82,6 @@ footer{
     color: white;
     padding-top: 5px;
     justify-content: center;
-}
-
-
-#content-quiz{
-    flex: 1 0 auto;
-}
-
-#content{
-  flex: 1 0 auto;
-  padding: 12px 48px;
-}
-
-.game{
-    display: flex;
-    margin-bottom: 50px;
-}
-
-.controls{
-    width: 40%;
-}
-
-.background-workspace{
-    width: 50%;
-    height: 900px;
-    border: 3px solid black;
-    background-color: #efe6dd;
-    float: right;
 }
 
 a {
@@ -305,6 +279,7 @@ button:disabled{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 [class^="imagePart"]{
