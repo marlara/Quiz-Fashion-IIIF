@@ -10,13 +10,6 @@
                     > 
                 </div>
             </div>
-            <!--
-            <br/>
-            <br/>
-            this is width {{ width }} and this is height {{ height }}
-            <br />
-            window width: {{ window.width }}; window height: {{ window.height }}
-            <br />-->
         </div>
 </template>
 
@@ -27,7 +20,8 @@ export default {
     props: {
         quizId: {type: String, required: true},
         iiif: {type: String, required: true},
-        correctAnswers: {type: Array, required: false}
+        correctAnswers: {type: Array, required: false},
+        manifest: {type: String, required: true}
     },
 
     data(){
@@ -82,7 +76,7 @@ export default {
                 //gets the manifest and the native width and height from it
                 const axios = require('axios').default; //use the default, see https://github.com/axios/axios/issues/3012
 
-                await axios.get(this.iiif.replace("f1/full/full/0/native.jpg", "manifest.json"))
+                await axios.get(this.manifest)
                 .then(response => (
                     this.canvas = response.data.sequences[0].canvases[0].images[0].resource,
                     this.width = this.canvas.width,
@@ -123,7 +117,7 @@ export default {
                         //sets the manifest with the composed elements
                         let xywh = [col * regionWidth, row * regionHeight, regionWidth, regionHeight].join(',');
                         let size = tileWidth + "," + tileHeight;
-                        imageParts[seq] = this.iiif.replace("full/full", xywh + "/" + size);
+                        imageParts[seq] = this.iiif.replace("full/max", xywh + "/" + size);
                         seq++;
                         if (seq % gridSize === 0) { //create the sequence array
                             this.sequence.push(imageParts);

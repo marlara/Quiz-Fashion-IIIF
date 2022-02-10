@@ -1,516 +1,168 @@
 {
     "quizzes": [
       {
-        "name": "Quiz Albini",
+        "name": "Quiz",
         "slug": "quiz-1",
-        "image": "D000533S_AlbiniW_ST40.jpg",
-        "iiif": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9042253v/f1/full/full/0/native.jpg", 
+        "iiif": "https://mostra1972.unipr.it:8183/iiif/2/B053104S_Rosselli.tif/full/max/0/default.jpg", 
+        "manifest": "https://mostra1972.unipr.it/iiif/2/510/manifest",
         "id": 1,
         "description":
-          "Primo quiz: qualcosa su Albini",
+          "Questo è un quiz",
         "questions": [
             {
-              "text": "Bla bla bla? 1",
+              "text": "Walter Albini ha spostate le sfilate da Firenza a:",
               "responses": [
-                {"res_text": "Risposta corretta Albini",
+                {"res_text": "Roma",
+                  "res_number": 0,
+                  "res_value": false
+                }, 
+                {"res_text": "Milano",
                   "res_number": 0,
                   "res_value": true
-                }, 
-                {"res_text": "Risposta sbagliata Albini",
+                },
+                {"res_text": "Londra",
                   "res_number": 0,
                   "res_value": false
                 }
               ]
             }, 
             {
-              "text": "Question 2",
+              "text": "Chi ha curato la celebre mostra <em>Italy, the new domestic landscape</em>?",
               "responses": [
-                {"res_text": "Risposta giusta Albini 2",
+                {"res_text": "Emilio Ambasz",
                   "res_number": 1,
                   "res_value": true
                 }, 
-                {"res_text": "Risposta sbagliata Albini 2",
+                {"res_text": "Germano Celant",
+                  "res_number": 1,
+                  "res_value": false
+                },
+                {"res_text": "Alfred Barr",
                   "res_number": 1,
                   "res_value": false
                 }
               ]
           },
           {
-            "text": "Question 3",
+            "text": "Quali sono le prime case di moda nate a Milano negli anni Settanta?",
             "responses": [
-              {"res_text": "Risposta corretta Albini",
+              {"res_text": "Krizia",
                 "res_number": 2,
                 "res_value": true
               }, 
-              {"res_text": "Risposta sbagliata Albini",
+              {"res_text": "Dolce e Gabbana",
                 "res_number": 2,
                 "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 4",
-            "responses": [
-              {"res_text": "Risposta corretta Albini",
-                "res_number": 3,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Albini",
-                "res_number": 3,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 5",
-            "responses": [
-              {"res_text": "Risposta corretta Albini",
-                "res_number": 4,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Albini",
-                "res_number": 4,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 6",
-            "responses": [
-              {"res_text": "Risposta corretta Albini",
-                "res_number": 5,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Albini",
-                "res_number": 5,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 7",
-            "responses": [
-              {"res_text": "Risposta corretta Albini",
-                "res_number": 6,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Albini",
-                "res_number": 6,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 8",
-            "responses": [
-              {"res_text": "Risposta corretta Albini",
-                "res_number": 7,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Albini",
-                "res_number": 7,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 9",
-            "responses": [
-              {"res_text": "Risposta corretta Albini",
-                "res_number": 8,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Albini",
-                "res_number": 8,
-                "res_value": false
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Quiz Versace",
-        "slug": "quiz-2",
-        "image": "D027514S_Versace.jpg",
-        "iiif": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b9041265r/f1/full/full/0/native.jpg",
-        "id": 2,
-        "description":
-          "Secondo quiz",
-          "questions": [
-            {
-              "text": "Question 1",
-              "responses": [
-                {"res_text": "Risposta sbagliata Versace",
-                  "res_number": 0,
-                  "res_value": false
-                }, 
-                {"res_text": "Risposta giusta Versace",
-                  "res_number": 0,
-                  "res_value": true
-                }
-              ]
-            }, 
-            {
-              "text": "Question 2",
-              "responses": [
-                {"res_text": "Risposta sbagliata Versace 2",
-                  "res_number": 1,
-                  "res_value": false
-                }, 
-                {"res_text": "Risposta giusta Versace 2",
-                  "res_number": 1,
-                  "res_value": true
-                }
-              ]
-          },
-          {
-            "text": "Question 3",
-            "responses": [
-              {"res_text": "Risposta corretta Versace",
-                "res_number": 2,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Versace",
+              },
+              {"res_text": "Max Mara",
                 "res_number": 2,
                 "res_value": false
               }
             ]
           }, 
           {
-            "text": "Question 4",
+            "text": "Chi ha disegnato la prima collezione Unisex?",
             "responses": [
-              {"res_text": "Risposta corretta Versace",
-                "res_number": 3,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Versace",
+              {"res_text": "Karl Lagerfeld",
                 "res_number": 3,
                 "res_value": false
+              }, 
+              {"res_text": "Walter Albini",
+                "res_number": 3,
+                "res_value": false
+              },
+              {"res_text": "Giorgio Armani",
+                "res_number": 3,
+                "res_value": true
               }
             ]
           }, 
           {
-            "text": "Question 5",
+            "text": "Dove erano esposti gli environment nella mostra <em>Italy, the new domestic landscape</em>?",
             "responses": [
-              {"res_text": "Risposta corretta Versace",
+              {"res_text": "Esterni al museo",
                 "res_number": 4,
                 "res_value": true
               }, 
-              {"res_text": "Risposta sbagliata Versace",
+              {"res_text": "Interni al museo",
                 "res_number": 4,
                 "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 6",
-            "responses": [
-              {"res_text": "Risposta corretta Versace",
-                "res_number": 5,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Versace",
-                "res_number": 5,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 7",
-            "responses": [
-              {"res_text": "Risposta corretta Versace",
-                "res_number": 6,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Versace",
-                "res_number": 6,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 8",
-            "responses": [
-              {"res_text": "Risposta corretta Versace",
-                "res_number": 7,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Versace",
-                "res_number": 7,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 9",
-            "responses": [
-              {"res_text": "Risposta corretta Versace",
-                "res_number": 8,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Versace",
-                "res_number": 8,
-                "res_value": false
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Quiz Armani",
-        "slug": "quiz-3",
-        "image": "D040524S_ARMANI.jpg",
-        "iiif": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b90412576/f1/full/full/0/native.jpg",
-        "id": 3,
-        "description":
-          "Terzo quiz",
-          "questions": [
-            {
-              "text": "Question 1",
-              "responses": [
-                {"res_text": "Risposta sbagliata Armani",
-                  "res_number": 0,
-                  "res_value": false
-                }, 
-                {"res_text": "Risposta giusta Armani",
-                  "res_number": 0,
-                  "res_value": true
-                }
-              ]
-            }, 
-            {
-              "text": "Question 2",
-              "responses": [
-                {"res_text": "Risposta sbagliata Armani 2",
-                  "res_number": 1,
-                  "res_value": false
-                }, 
-                {"res_text": "Risposta giusta Armani 2",
-                  "res_number": 1,
-                  "res_value": true
-                }
-              ]
-          },
-          {
-            "text": "Question 3",
-            "responses": [
-              {"res_text": "Risposta corretta Armani",
-                "res_number": 2,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Armani",
-                "res_number": 2,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 4",
-            "responses": [
-              {"res_text": "Risposta corretta Armani",
-                "res_number": 3,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Armani",
-                "res_number": 3,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 5",
-            "responses": [
-              {"res_text": "Risposta corretta Armani",
-                "res_number": 4,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Armani",
+              },
+              {"res_text": "In container allestiti fuori dal museo",
                 "res_number": 4,
                 "res_value": false
               }
             ]
           }, 
           {
-            "text": "Question 6",
+            "text": "Da chi era composto il gruppo Archizoom?",
             "responses": [
-              {"res_text": "Risposta corretta Armani",
+              {"res_text": "Andrea Branzi, Gilberto Corretti, Paolo Deganello e Massimo Morozzi",
                 "res_number": 5,
                 "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Armani",
+              },
+              {"res_text": "Ettore Sottsass, Hans Hollein, Arata Isozaki, Andrea Branzi",
                 "res_number": 5,
                 "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 7",
-            "responses": [
-              {"res_text": "Risposta corretta Armani",
-                "res_number": 6,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Armani",
-                "res_number": 6,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 8",
-            "responses": [
-              {"res_text": "Risposta corretta Armani",
-                "res_number": 7,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Armani",
-                "res_number": 7,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 9",
-            "responses": [
-              {"res_text": "Risposta corretta Armani",
-                "res_number": 8,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Armani",
-                "res_number": 8,
-                "res_value": false
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Quiz Moschino",
-        "slug": "quiz-4",
-        "image": "D040730S_Moschino.jpg",
-        "iiif": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b90414715/f1/full/full/0/native.jpg",
-        "id": 4,
-        "description":
-          "Quarto quiz",
-          "questions": [
-            {
-              "text": "Question 1",
-              "responses": [
-                {"res_text": "Risposta sbagliata Moschino",
-                  "res_number": 0,
-                  "res_value": false
-                }, 
-                {"res_text": "Risposta giusta Moschino",
-                  "res_number": 0,
-                  "res_value": true
-                }
-              ]
-            }, 
-            {
-              "text": "Question 2",
-              "responses": [
-                {"res_text": "Risposta sbagliata Moschino 2",
-                  "res_number": 1,
-                  "res_value": false
-                }, 
-                {"res_text": "Risposta corretta Moschino 2",
-                  "res_number": 1,
-                  "res_value": true
-                }
-              ]
-          },
-          {
-            "text": "Question 3",
-            "responses": [
-              {"res_text": "Risposta corretta Moschino",
-                "res_number": 2,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Moschino",
-                "res_number": 2,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 4",
-            "responses": [
-              {"res_text": "Risposta corretta Moschino",
-                "res_number": 3,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Moschino",
-                "res_number": 3,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 5",
-            "responses": [
-              {"res_text": "Risposta corretta Moschino",
-                "res_number": 4,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Moschino",
-                "res_number": 4,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 6",
-            "responses": [
-              {"res_text": "Risposta corretta Moschino",
-                "res_number": 5,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Moschino",
+              },
+              {"res_text": "Ettore Sottsass, Aldo Cibic, Matteo Thun, Marco Zanini e Marco Marabelli",
                 "res_number": 5,
                 "res_value": false
               }
             ]
           }, 
           {
-            "text": "Question 7",
+            "text": "Quando Ettore Sottsass fonda il gruppo Menphis?",
             "responses": [
-              {"res_text": "Risposta corretta Moschino",
+              {"res_text": "1979",
+                "res_number": 6,
+                "res_value": false
+              }, 
+              {"res_text": "1972",
+                "res_number": 6,
+                "res_value": false
+              },
+              {"res_text": "1980",
                 "res_number": 6,
                 "res_value": true
+              }
+            ]
+          }, 
+          {
+            "text": "A quando risale la campagna pubblicitaria <em>Stop the fashion system</em> di Franco Moschino?",
+            "responses": [
+              {"res_text": "1990",
+                "res_number": 7,
+                "res_value": true
               }, 
-              {"res_text": "Risposta sbagliata Moschino",
-                "res_number": 6,
+              {"res_text": "1992",
+                "res_number": 7,
+                "res_value": false
+              },
+              {"res_text": "2004",
+                "res_number": 7,
                 "res_value": false
               }
             ]
           }, 
           {
-            "text": "Question 8",
+            "text": "Chi è considerato l'architetto della moda?",
             "responses": [
-              {"res_text": "Risposta corretta Moschino",
-                "res_number": 7,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Moschino",
-                "res_number": 7,
-                "res_value": false
-              }
-            ]
-          }, 
-          {
-            "text": "Question 9",
-            "responses": [
-              {"res_text": "Risposta corretta Moschino",
-                "res_number": 8,
-                "res_value": true
-              }, 
-              {"res_text": "Risposta sbagliata Moschino",
+              {"res_text": "Giorgio Armani",
                 "res_number": 8,
                 "res_value": false
+              }, 
+              {"res_text": "Cinzia Ruggeri",
+                "res_number": 8,
+                "res_value": false
+              },
+              {"res_text": "Gianfranco Ferré",
+                "res_number": 8,
+                "res_value": true
               }
             ]
           }
         ]
       }
-   ]
+    ]
 }

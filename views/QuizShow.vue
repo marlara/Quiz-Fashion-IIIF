@@ -5,8 +5,6 @@
     </div>
     <div class="quizDescription">
         <GoBackButton />
-        <!--<p>{{quiz.description}}</p> -->
-        <p>Rispondi alle domande. Ad ogni risposta corretta si comporrà un pezzo dell'immagine. Se risponderai correttamente a tutto, avrai una figura intera!</p>
     </div>
     <div class="quizForm" :key="componentKey"> <!--how to force re-render https://michaelnthiessen.com/force-re-render/-->
         <div class="quizQuestContainer">
@@ -42,8 +40,8 @@
                     <button :disabled="!userResponse" aria-label="go to next" @click="next">
                         next
                     </button>
-                    {{userResponse}}
-                    {{correctAnswers}}
+                    <!--{{userResponse}}
+                    {{correctAnswers}}-->
                 </div>
             </div>
             <div class="quizQuestion" v-if="questionIndex === quiz.questions.length">
@@ -58,6 +56,7 @@
             :quiz-id="this.id" 
             :iiif ="this.quiz.iiif"
             :correct-answers="this.correctAnswers"
+            :manifest="this.quiz.manifest"
         />
     </div>
 </template>
@@ -96,10 +95,10 @@ export default {
     next: function() {
         if (this.userResponse[0] == true) { //if the selected answer is true then append to the array the index number
             this.correctAnswers.push(this.questionIndex)
-            alert("Risposta corretta! :)");
+            //alert("Risposta corretta! :)");
         }
         else{
-            alert("Risposta errata :(")
+            //alert("Risposta errata :(")
         }
         this.questionIndex++;
     },

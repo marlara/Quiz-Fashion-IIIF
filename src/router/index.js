@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "/views/Home.vue";
 import sourceData from "@/data.json";
+import Quiz from "/views/QuizShow.vue";
 
 const routes = [
   {
@@ -9,9 +10,11 @@ const routes = [
     component: Home,
   },
   {
+    //path: "/quiz/:id",
+    //name: "quiz.show",
     path: "/quiz/:id",
     name: "quiz.show",
-    component: ()=> import("/views/QuizShow.vue"),
+    component: Quiz,
     props: true,
     beforeEnter(to){ // all this is to have the NotFound if the data doesn't exists in the json. It's called Navigation Guard
       const exists = sourceData.quizzes.find(
