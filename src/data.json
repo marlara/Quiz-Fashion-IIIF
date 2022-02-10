@@ -27,7 +27,7 @@
               ]
             }, 
             {
-              "text": "Chi ha curato la celebre mostra <em>Italy, the new domestic landscape</em>?",
+              "text": "Chi ha curato la celebre mostra 'Italy, the new domestic landscape'?",
               "responses": [
                 {"res_text": "Emilio Ambasz",
                   "res_number": 1,
@@ -69,16 +69,16 @@
               }, 
               {"res_text": "Walter Albini",
                 "res_number": 3,
-                "res_value": false
+                "res_value": true
               },
               {"res_text": "Giorgio Armani",
                 "res_number": 3,
-                "res_value": true
+                "res_value": false
               }
             ]
           }, 
           {
-            "text": "Dove erano esposti gli environment nella mostra <em>Italy, the new domestic landscape</em>?",
+            "text": "Dove erano esposti gli environment nella mostra 'Italy, the new domestic landscape'?",
             "responses": [
               {"res_text": "Esterni al museo",
                 "res_number": 4,
@@ -129,7 +129,7 @@
             ]
           }, 
           {
-            "text": "A quando risale la campagna pubblicitaria <em>Stop the fashion system</em> di Franco Moschino?",
+            "text": "A quando risale la campagna pubblicitaria 'Stop the fashion system' di Franco Moschino?",
             "responses": [
               {"res_text": "1990",
                 "res_number": 7,

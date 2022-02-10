@@ -313,3 +313,16 @@ button:disabled{
     margin-top: 3em;
   }
 }
+
+
+li{
+  padding: 2px;
+}
+
+label{
+  cursor: pointer;
+}
+
+label:hover{
+  color: #efe6dd;
+}

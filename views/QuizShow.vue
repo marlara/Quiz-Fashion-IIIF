@@ -23,13 +23,13 @@
                         <li v-for="(response, index) in question.responses"
                             :key = index
                         >
-                        <label>
-                            <input type="radio"
-                                :value="[response.res_value === true]"
-                                :name="response.res_number" 
-                                v-model="userResponse"
-                            > {{response.res_text}}
-                        </label>
+                            <label>
+                                <input type="radio"
+                                    :value="response.res_value"
+                                    :name="response.res_number" 
+                                    v-model="userResponse"
+                                > {{response.res_text}}
+                            </label>
                         </li>
                     </ol>
                     <!-- The two navigation buttons -->
@@ -37,11 +37,9 @@
                     <button :disabled="questionIndex < 1" aria-label="go to previous" @click="prev">
                         prev
                     </button>
-                    <button :disabled="!userResponse" aria-label="go to next" @click="next">
+                    <button :disabled="questionIndex > 8" aria-label="go to next" @click="next">
                         next
                     </button>
-                    <!--{{userResponse}}
-                    {{correctAnswers}}-->
                 </div>
             </div>
             <div class="quizQuestion" v-if="questionIndex === quiz.questions.length">
@@ -93,12 +91,9 @@ export default {
     methods: {
     // Go to next question
     next: function() {
-        if (this.userResponse[0] == true) { //if the selected answer is true then append to the array the index number
+        if (this.userResponse == true) { //if the selected answer is true then append to the array the index number
             this.correctAnswers.push(this.questionIndex)
-            //alert("Risposta corretta! :)");
-        }
-        else{
-            //alert("Risposta errata :(")
+            this.userResponse = null
         }
         this.questionIndex++;
     },
