@@ -5,6 +5,7 @@
         "slug": "quiz-1",
         "iiif": "https://mostra1972.unipr.it:8183/iiif/2/B053104S_Rosselli.tif/full/max/0/default.jpg", 
         "manifest": "https://mostra1972.unipr.it/iiif/2/510/manifest",
+        "scheda": "https://mostra1972.unipr.it/item/510#?c=&m=&s=&cv=&xywh=-5519%2C0%2C18764%2C5354",
         "id": 1,
         "description":
           "Questo è un quiz",

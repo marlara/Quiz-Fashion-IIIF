@@ -44,7 +44,8 @@
             </div>
             <div class="quizQuestion" v-if="questionIndex === quiz.questions.length">
                 <h2>Hai finito il quiz!</h2>
-                <p>Le risposte corrette sono state: {{this.correctAnswers.length}} / {{ quiz.questions.length }} </p>
+                <p>Le risposte corrette sono state: {{this.correctAnswers.length}} / {{ quiz.questions.length }} <br/>
+                <a :href="quiz.scheda">Vai alla scheda dell'immagine</a> </p>
                 <button @click="restart"> 
                     Voglio riprovare!
                 </button>
@@ -93,6 +94,9 @@ export default {
     next: function() {
         if (this.userResponse == true) { //if the selected answer is true then append to the array the index number
             this.correctAnswers.push(this.questionIndex)
+            this.userResponse = null
+        }
+        else{
             this.userResponse = null
         }
         this.questionIndex++;
