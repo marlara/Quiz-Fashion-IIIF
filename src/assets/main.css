@@ -9,7 +9,7 @@ html, body{
 
 main{
   height: 100%;
-  padding: 12px 48px;
+  padding: 12px;
   overflow-y: scroll;
 }
 
@@ -70,7 +70,7 @@ header > h1{
   margin: 0 auto 0 0;
   padding: 6px 0;
   color: white;
-  font-size: 31.5px;
+  font-size: 2em;
   line-height: 48px;
 }
 
@@ -120,7 +120,7 @@ button:disabled{
 
 .rectangle_title{
   display: block;
-  background: linear-gradient(to top left,transparent, #fa648f 0) top left/40% 40% no-repeat, transparent;
+  background: linear-gradient(to top left,transparent, #fa648f 0) top left/40% 30% no-repeat, transparent;
   margin-left: 0px;
 }
 
@@ -325,4 +325,38 @@ label{
 
 label:hover{
   color: #efe6dd;
+}
+
+@media only screen and (max-width: 650px){
+  .home_image{
+    display: none;
+  }
+
+  .title_image{
+    display: none;
+  }
+
+  header > h1, h1{
+    font-size: 1.2em;
+  }
+
+  .quizForm{
+    padding: 6px;
+  }
+
+  .go-back{
+    margin-bottom: 6px;
+  }
+
+  .rectangle_title > h1{
+    margin-left: 12px;
+  }
+
+}
+
+
+@media only screen and (max-width: 400px){
+  header > h1{
+    display: none;
+  }
 }

@@ -95,7 +95,13 @@ export default {
 
                 
                 //sets the maximum width and height, based on the window size
-                let maxWidth = this.window.width / 2;
+                let maxWidth
+                if (this.window.width > 450){
+                    maxWidth = this.window.width / 2;
+                }
+                else{
+                    maxWidth = this.window.width / 1.5;
+                }
                 let maxHeight = this.window.height - 200;
                 if ( (this.height / this.width) > (maxHeight / maxWidth) ) {
                     this.scalePct = Math.min(maxHeight / this.height, 1);
