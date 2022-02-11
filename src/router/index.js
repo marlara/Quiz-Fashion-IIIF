@@ -10,8 +10,6 @@ const routes = [
     component: Home,
   },
   {
-    //path: "/quiz/:id",
-    //name: "quiz.show",
     path: "/quiz/:id",
     name: "quiz.show",
     component: Quiz,
@@ -36,7 +34,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/game/'),  // gives a url of `https://example.com/folder/` https://router.vuejs.org/api/#createwebhistory
   routes,
   scrollBehavior(to, from, savedPosition){ //go to top of the page when changing it 
     return savedPosition || new Promise((resolve) => {
